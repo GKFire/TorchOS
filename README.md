@@ -21,23 +21,23 @@ Install
 ---------
 This installation guide assumes that you have installed debian without a desktop enviroment and have sudo configured.
 
-1.
-  go to your root folder and into the opt folder
-  `cd /opt/`
-2.
-  clone this repository with git
-  `sudo git clone https://github.com/GKFire/TorchOS.git`
-3.
-  run the debian_install script
-  `sudo ./debian_install`
-4.
-  read the prompts and follow them carefully, otherwise you may need to completly reinstall debian to restart this process.
-5.
-  logout or restart
-  `logout` or `exit` or `sudo systemctl reboot` or `sudo systemctl poweroff`
-6.
-  log back into your account.
-7.
-  start x
-  `startx`
+go to your root folder and into the opt folder
+`cd /opt/`
+
+clone this repository with git
+`sudo git clone https://github.com/GKFire/TorchOS.git`
+
+run the debian_install script
+`sudo ./debian_install`
+
+read the prompts and follow them carefully, otherwise you may need to completly reinstall debian to restart this process.
+
+logout or restart
+`logout` or `exit` or `sudo systemctl reboot` or `sudo systemctl poweroff`
+
+log back into your account.
+
+start x
+`startx`
+  
 Welcome to TorchOS
