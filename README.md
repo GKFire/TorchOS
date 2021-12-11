@@ -3,19 +3,22 @@ an install script for Debian.
 
 What does this do?
 ----------
-  This contains an install script for Debian users to automate the install and setup for a Window Manager and preferences. The install script will launch apt and download the required packages to setup TorchOS. set variables needed, setup customizations, and change the shell from bash to zsh.
+  This contains an install script for Debian users to automate the install and setup for a Window Manager and preferences. The install script will launch apt and download the required packages to setup TorchOS. set variables needed, setup customizations, and change the shell from bash to fish.
 
 What it includes.
 ----------
-- zsh (shell)
+- fish(shell)
 - st (terminal)
 - dwm (window manager)
 - chromium (primary browser)
-- brave (secondary browser)
+- brave (secondary browser) (optional)
 - git
-- perl enviroment
-- rust enviroment
-- java (choice of openjdk or oracle)
+- perl enviroment (optional)
+- rust enviroment (optional)
+- javajdk (lastest + lts) (optional)
+- vscode
+- eclipse (optional with java)
+- vim
 
 Install
 ---------
@@ -30,7 +33,7 @@ clone this repository with git
 run the debian_install script
 `sudo ./debian_install`
 
-read the prompts and follow them carefully, otherwise you may need to completly reinstall debian to restart this process.
+read the onscreen prompts and follow them carefully, otherwise you may need to completly reinstall debian to restart this process.
 
 logout or restart
 `logout` or `exit` or `sudo systemctl reboot` or `sudo systemctl poweroff`
