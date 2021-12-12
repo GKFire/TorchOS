@@ -4,25 +4,19 @@ echo "Beginning installation of TorchOS v1.0"
 echo "Enter in your username to begin.."
 read usernamevar
 
+if id "$1" &>/dev/null; then
+    echo 'valid username'
+else
+    echo "That user doesn't exist"
+	exit -1
+fi
 
 echo "Beginning installation of dependancies.."
-apt -y install build-essential libx11-dev libxinerama-dev libxft-dev wget xinit xserver-xorg x11-xserver-utils fish perl curl gcc cmake make vim chromium nitrogen fonts-font-awesome
-sleep 5
+apt update
+apt -y install build-essential libx11-dev libxinerama-dev libxft-dev wget xinit xserver-xorg x11-xserver-utils \
+	fish perl curl gcc cmake make vim \
+	chromium nitrogen fonts-font-awesome
 
-# echo "retrieving dwm from suckless.org"
-# wget -q "https://dl.suckless.org/dwm/dwm-6.2.tar.gz"
-# echo "retrieving st from suckless.org"
-# wget -q "https://dl.suckless.org/st/st-0.8.4.tar.gz"
-# echo "retrieving dmenu from suckless.org"
-# wget -q "https://dl.suckless.org/tools/dmenu-5.0.tar.gz"
-
-# echo "extracting archives"
-# tar -xf dwm-6.2.tar.gz
-# tar -xf st-0.8.4.tar.gz
-# tar -xf dmenu-5.0.tar.gz
-
-# echo "removing archives"
-# rm *.tar.gz
 
 echo "installing binaries"
 cd /opt/TorchOS/dwm-6.2/
@@ -33,20 +27,20 @@ cd ../st-0.8.4/
 make clean install
 cd ../dmenu-5.0/
 make clean install
-
 cd ../
-echo "setting up .xinitrc"
 
-# code for setting up .xinitrc at the user's home directory
+echo "setting up .xinitrc"
+cp .xinitrc /home/$usernamevar/.xinitrc
+chown $username.$username /home/$username/.xinitrc
+
 
 echo "customizing TorchOS install"
+chsh -s /bin/fish $usernamevar
 
-# code for customization
-
-echo "setting up programming enviroments"
 
 # code for downloading programming language binaries
 
+# install Rust
 clear
 echo "Would you like to have Rust installed on this machine?"
 echo "'1': Yes"
@@ -59,34 +53,45 @@ then
 	curl https://sh.rustup.rs -sSf | sh
 fi
 
+
+# install Java and Eclipse as its IDE
 clear
-echo "Would you like to have Perl installed on this machine?"
+echo "Would you like to have Java + Eclipse installed on this machine?"
 echo "'1': Yes"
 echo "'0': No"
 echo "(default value is 0, invaild responce will equal 0.)"
-read installPerl
-
-
-if [ "$installPerl" == "1" ]
-then
-	apt -y install perl
-fi
-
-clear
-echo "Would you like to have Java + Eclipse installed?"
-echo "'1': Yes"
-echo "'0': No"
-echo "(default value is 0, invaild responce will equal 0.)"
-echo "NOTE: this will install both the latest version and lts version of openjdk"
+echo "NOTE: this will install both the latest version and lts version of openjdk. (Latest: openjdk-17 | LTS: openjdk-17)"
 read installJava
 
 
 if [ "$installJava" == "1" ]
 then
-	apt -y install openjdk-17-jdk openjdk-11-jdk
+	apt -y install openjdk-17-jdk
+	cd /usr/share/
+	wget https://mirrors.jevincanders.net/eclipse/technology/epp/downloads/release/2021-12/R/eclipse-java-2021-12-R-linux-gtk-x86_64.tar.gz
+	tar -xvf eclipse-java-2021-12-R-linux-gtk-x86_64.tar.gz
+	rm eclipse-java-2021-12-R-linux-gtk-x86_64.tar.gz
+	mv eclipse-java-2021-12-R-linux-gtk-x86_64 eclipse
+	cd /opt/TorchOS/
 fi
 
+clear
+echo "Would you like to install Brave Browser?"
+echo "'1': Yes"
+echo "'0': No"
+echo "(default value is 0, invaild responce will equal 0.)"
+read installBrave
 
-exit 1
-# code for setting up enviroments
-# print what it did
+if [ "$installBrave" == "1" ]
+then
+	apt install apt-transport-https
+	curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+	echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+	apt update
+	apt install brave-browser
+fi
+
+clear
+echo "All finished"
+
+exit 0
