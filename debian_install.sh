@@ -2,12 +2,12 @@
 
 echo "Beginning installation of TorchOS v1.0"
 echo "Enter in your username to begin.."
-read username_var
+read usernamevar
 
 
 echo "Beginning installation of dependancies.."
 apt -y install build-essential libx11-dev libxinerama-dev libxft-dev wget xinit xserver-xorg x11-server-utils fish perl curl gcc cmake make vim chromium nitrogen fonts-font-awesome
-
+sleep 5
 
 # echo "retrieving dwm from suckless.org"
 # wget -q "https://dl.suckless.org/dwm/dwm-6.2.tar.gz"
@@ -52,9 +52,9 @@ echo "Would you like to have Rust installed on this machine?"
 echo "'1': Yes"
 echo "'0': No"
 echo "(default value is 0, invaild responce will equal 0.)"
-read install_rust
+read installRust
 
-if [ "$install_rust" == "1" ]
+if [ "$installRust" == "1" ]
 then
 	curl https://sh.rustup.rs -sSf | sh
 fi
@@ -64,11 +64,10 @@ echo "Would you like to have Perl installed on this machine?"
 echo "'1': Yes"
 echo "'0': No"
 echo "(default value is 0, invaild responce will equal 0.)"
-read install_perl
+read installPerl
 
-echo "$install_perl"
-sleep 1000
-if [ "$install_perl" == "1" ]
+
+if [ "$installPerl" == "1" ]
 then
 	apt -y install perl
 fi
@@ -79,13 +78,12 @@ echo "'1': Yes"
 echo "'0': No"
 echo "(default value is 0, invaild responce will equal 0.)"
 echo "NOTE: this will install both the latest version and lts version of openjdk"
-read install_java
+read installJava
 
 
-if [ "$install_java" == "1" ]
+if [ "$installJava" == "1" ]
 then
 	apt -y install openjdk-17-jdk openjdk-11-jdk
-
 fi
 
 
