@@ -55,7 +55,8 @@ echo "'0': No"
 echo "(default value is 0, invaild responce will equal 0.)"
 read install_rust
 
-if [ $install_rust == "1" ] then
+if [ $install_rust == "1" ]
+then
 	curl https://sh.rustup.rs -sSf | sh
 fi
 
@@ -66,7 +67,8 @@ echo "'0': No"
 echo "(default value is 0, invaild responce will equal 0.)"
 read install_perl
 
-if [ $install_perl == "1" ] then
+if [ $install_perl == "1" ]
+then
 	apt -y install perl
 fi
 
@@ -78,7 +80,8 @@ echo "(default value is 0, invaild responce will equal 0.)"
 echo "NOTE: this will install both the latest version and lts version of openjdk"
 read install_java
 
-if [ $install_java == "1" ] then
+if [ $install_java == "1" ]
+then
 	apt -y install openjdk-17-jdk openjdk-11-jdk
 
 fi
