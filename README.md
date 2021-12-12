@@ -20,7 +20,6 @@ What it includes.
 - perl enviroment (optional)
 - rust enviroment (optional)
 - javajdk (lastest + lts) (optional)
-- vscode
 - eclipse (optional with java)
 - vim
 
@@ -52,4 +51,3 @@ Welcome to TorchOS
 Issues
 -------
 - execute permissions are not set properly. (working on fixing this. The reason is that i am currently developing this on Windows 10 that does not have good permission translation to linux. Will get a linux dev machine setup to fix this issue)
-- this doesn't setup xinit. (yep. haven't gotten around to that yet)
