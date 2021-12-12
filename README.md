@@ -1,7 +1,7 @@
 # TorchOS
 an install script for Debian.
 
-Heavy inspiration from sgomare's featherOS. great project. [link](https://github.com/sgomare/featherOS)
+Heavy inspiration from sgomare's [featherOS](https://github.com/sgomare/featherOS). great project.
 
 What does this do?
 ----------
