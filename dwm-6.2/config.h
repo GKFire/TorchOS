@@ -63,7 +63,11 @@ static const char *browser[] = {"brave-browser", NULL};
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
+<<<<<<< HEAD
 	{ MODKEY,             		XK_Return, spawn,          {.v = termcmd } },
+=======
+	{ MODKEY,             			XK_Enter, 	   spawn,          {.v = termcmd } },
+>>>>>>> b652f8483741e1a01e08485dcc5442339c9eab40
 	{ MODKEY,                       XK_b,      spawn,      	   {.v = browser } },
 	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
