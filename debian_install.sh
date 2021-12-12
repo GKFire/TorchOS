@@ -6,9 +6,7 @@ read username_var
 
 
 echo "Beginning installation of dependancies.."
-apt -y install build-essential libx11-dev libxinerama-dev libxft-dev wget xinit xserver-xorg x11-server-utils \
-		fish perl curl gcc cmake make vim \
-		chromium nitrogen fonts-font-awesome
+apt -y install build-essential libx11-dev libxinerama-dev libxft-dev wget xinit xserver-xorg x11-server-utils fish perl curl gcc cmake make vim chromium nitrogen fonts-font-awesome
 
 
 # echo "retrieving dwm from suckless.org"
