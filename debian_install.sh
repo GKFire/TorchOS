@@ -7,7 +7,7 @@ read username_var
 
 echo "Beginning installation of dependancies.."
 apt -y install build-essential libx11-dev libxinerama-dev libxft-dev wget xinit xserver-xorg x11-server-utils \
-		zsh perl curl gcc cmake make \
+		fish perl curl gcc cmake make vim \
 		chromium nitrogen fonts-font-awesome
 
 
@@ -47,5 +47,39 @@ echo "customizing TorchOS install"
 echo "setting up programming enviroments"
 
 # code for downloading programming language binaries
+
+echo "\n\nWould you like to have Rust installed on this machine?"
+echo "'1': Yes"
+echo "'0': No"
+echo "(default value is 0, invaild responce will equal 0.)"
+read install_rust
+
+if [ $install_rust == "1" ] then
+	curl https://sh.rustup.rs -sSf | sh
+fi
+
+echo "\n\nWould you like to have Perl installed on this machine?"
+echo "'1': Yes"
+echo "'0': No"
+echo "(default value is 0, invaild responce will equal 0.)"
+read install_perl
+
+if [ $install_perl == "1" ] then
+	apt -y install perl
+fi
+
+echo "\n\nWould you like to have Java + Eclipse installed?"
+echo "'1': Yes"
+echo "'0': No"
+echo "(default value is 0, invaild responce will equal 0.)"
+echo "NOTE: this will install both the latest version and lts version of openjdk"
+read install_java
+
+if [ $install_java == "1" ] then
+	apt -y install openjdk-17-jdk openjdk-11-jdk
+
+fi
+
+
 # code for setting up enviroments
 # print what it did
