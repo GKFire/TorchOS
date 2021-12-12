@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 echo "Beginning installation of TorchOS v1.0"
 echo "Enter in your username to begin.."
