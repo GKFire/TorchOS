@@ -66,7 +66,7 @@ static const char unknown_str[] = "n/a";
 static const struct arg args[] = {
 	/* function format          argument */
 	{ kernel_release, "[ %s] ",	NULL },
-	# { run_command, "[%s] ", "/opt/TorchOS/scripts/datetimeformat.sh" },
+	// { run_command, "[%s] ", "/opt/TorchOS/scripts/datetimeformat.sh" },
 	{ cpu_perc, "[ | CPU %s%% | ", 	NULL},
 	{ ram_perc, "RAM %s%% | ",	NULL},
 	{ swap_perc, "SWAP %s%%] ", 	NULL},
