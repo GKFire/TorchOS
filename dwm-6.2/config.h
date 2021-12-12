@@ -58,13 +58,22 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_red, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
+<<<<<<< HEAD
 static const char *browser[] = {"brave-browser", NULL};
+=======
+// static const char *browser[] = {"chromium", NULL};
+>>>>>>> d2ebfdd0077d055c8b5d64c5ecd4907e262e6d62
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
+<<<<<<< HEAD
 	{ MODKEY,             		XK_t, 	   spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      spawn,      	   {.v = browser } },
+=======
+	{ MODKEY,             			XK_t, 	   spawn,          {.v = termcmd } },
+	{ MODKEY,                       XK_b,      spawn,      	   {.v = {"brave-browser", NULL} },
+>>>>>>> d2ebfdd0077d055c8b5d64c5ecd4907e262e6d62
 	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
