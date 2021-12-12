@@ -67,6 +67,8 @@ echo "'0': No"
 echo "(default value is 0, invaild responce will equal 0.)"
 read install_perl
 
+echo "$install_perl"
+sleep 1000
 if [ "$install_perl" == "1" ]
 then
 	apt -y install perl
