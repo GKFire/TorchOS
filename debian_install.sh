@@ -14,7 +14,7 @@ fi
 echo "Beginning installation of dependancies.."
 apt update
 apt -y install build-essential libx11-dev libxinerama-dev libxft-dev wget xinit xserver-xorg x11-xserver-utils \
-	fish perl curl gcc cmake make vim \
+	fish perl curl gcc cmake make vim htop neofetch \
 	chromium nitrogen fonts-font-awesome
 
 
