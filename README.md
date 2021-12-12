@@ -3,9 +3,11 @@ an install script for Debian.
 
 Heavy inspiration from sgomare's [featherOS](https://github.com/sgomare/featherOS). great project.
 
+Dwm, st, dmenu, and slstatus were created by [link](https://suckless.org)
+
 What does this do?
 ----------
-  This contains an install script for Debian users to automate the install and setup for a Window Manager and preferences. The install script will launch apt and download the required packages to setup TorchOS. set variables needed, setup customizations, and change the shell from bash to fish.
+  This contains an install script for Debian users to automate the install and setup for dwm. The install script will launch apt and download the required packages to setup TorchOS. set variables needed, setup customizations, and change the shell from bash to fish.
 
 What it includes.
 ----------
