@@ -48,7 +48,8 @@ echo "setting up programming enviroments"
 
 # code for downloading programming language binaries
 
-echo "\n\nWould you like to have Rust installed on this machine?"
+clear
+echo "Would you like to have Rust installed on this machine?"
 echo "'1': Yes"
 echo "'0': No"
 echo "(default value is 0, invaild responce will equal 0.)"
@@ -58,7 +59,8 @@ if [ $install_rust == "1" ] then
 	curl https://sh.rustup.rs -sSf | sh
 fi
 
-echo "\n\nWould you like to have Perl installed on this machine?"
+clear
+echo "Would you like to have Perl installed on this machine?"
 echo "'1': Yes"
 echo "'0': No"
 echo "(default value is 0, invaild responce will equal 0.)"
@@ -68,7 +70,8 @@ if [ $install_perl == "1" ] then
 	apt -y install perl
 fi
 
-echo "\n\nWould you like to have Java + Eclipse installed?"
+clear
+echo "Would you like to have Java + Eclipse installed?"
 echo "'1': Yes"
 echo "'0': No"
 echo "(default value is 0, invaild responce will equal 0.)"
@@ -81,5 +84,6 @@ if [ $install_java == "1" ] then
 fi
 
 
+exit 1
 # code for setting up enviroments
 # print what it did
