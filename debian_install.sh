@@ -4,7 +4,7 @@ echo "Beginning installation of TorchOS v1.0"
 echo "Enter in your username to begin.."
 read usernamevar
 
-if id "$1" &>/dev/null; then
+if id "$usernamevar" &>/dev/null; then
     echo 'valid username'
 else
     echo "That user doesn't exist"
