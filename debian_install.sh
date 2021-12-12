@@ -25,7 +25,7 @@ apt -y install build-essential libx11-dev libxinerama-dev libxft-dev wget xinit 
 # rm *.tar.gz
 
 echo "installing binaries"
-cd dwm-6.2/
+cd /opt/TorchOS/dwm-6.2/
 make clean install
 cd ../slstatus/
 make clean install
@@ -34,6 +34,7 @@ make clean install
 cd ../dmenu-5.0/
 make clean install
 
+cd ../
 echo "setting up .xinitrc"
 
 # code for setting up .xinitrc at the user's home directory
