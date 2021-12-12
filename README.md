@@ -1,13 +1,15 @@
 # TorchOS
 an install script for Debian.
 
+Heavy inspiration from sgomare's featherOS. great project. [link](https://github.com/sgomare/featherOS)
+
 What does this do?
 ----------
   This contains an install script for Debian users to automate the install and setup for a Window Manager and preferences. The install script will launch apt and download the required packages to setup TorchOS. set variables needed, setup customizations, and change the shell from bash to fish.
 
 What it includes.
 ----------
-- fish(shell)
+- fish (shell)
 - st (terminal)
 - dwm (window manager)
 - chromium (primary browser)
@@ -33,7 +35,7 @@ clone this repository with git
 run the debian_install script
 `sudo ./debian_install`
 
-read the onscreen prompts and follow them carefully, otherwise you may need to completly reinstall debian to restart this process.
+read the onscreen prompts and follow them carefully.
 
 logout or restart
 `logout` or `exit` or `sudo systemctl reboot` or `sudo systemctl poweroff`
@@ -44,3 +46,8 @@ start x
 `startx`
   
 Welcome to TorchOS
+
+Issues
+-------
+- execute permissions are not set properly. (working on fixing this. The reason is that i am currently developing this on Windows 10 that does not have good permission translation to linux. Will get a linux dev machine setup to fix this issue)
+- this doesn't setup xinit. (yep. haven't gotten around to that yet)
