@@ -65,10 +65,10 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format          argument */
-	{ kernel_release, "[linux-kernel-%s] ",	NULL },
-	{ cpu_perc, "[CPU %s%% | ", 	NULL},
-	{ ram_perc, "RAM %s%% | ",	NULL},
-	{ swap_perc, "SWAP %s%%] ", 	NULL},
+	{ kernel_release, "[ %s] ",	NULL },
+	{ cpu_perc, "[ %s%% | ", 	NULL},
+	{ ram_perc, "RAM  %s%% | ",	NULL},
+	{ swap_perc, "SWAP  %s%%] ", 	NULL},
 	{ username, "[%s@",	NULL},
 	{ hostname, "%s] ",	NULL},
 };

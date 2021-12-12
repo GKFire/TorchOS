@@ -27,7 +27,7 @@ sleep 5
 echo "installing binaries"
 cd /opt/TorchOS/dwm-6.2/
 make clean install
-cd ../slstatus/
+cd ../slstatus-dev/
 make clean install
 cd ../st-0.8.4/
 make clean install
