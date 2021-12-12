@@ -3,7 +3,7 @@ an install script for Debian.
 
 Heavy inspiration from sgomare's [featherOS](https://github.com/sgomare/featherOS). great project.
 
-Dwm, st, dmenu, and slstatus were created by [link](https://suckless.org)
+Dwm, st, dmenu, and slstatus were created by [suckless](https://suckless.org)
 
 What does this do?
 ----------
