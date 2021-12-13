@@ -8,6 +8,8 @@ Dwm, st, dmenu, and slstatus were created by [suckless](https://suckless.org)
 What does this do?
 ----------
   This contains an install script for Debian users to automate the install and setup for dwm. The install script will launch apt and download the required packages to setup TorchOS. set variables needed, setup customizations, and change the shell from bash to fish.
+  
+**This is recommended for VM's. Not bare metal**
 
 What it includes.
 ----------
@@ -17,7 +19,6 @@ What it includes.
 - chromium (primary browser)
 - brave (secondary browser) (optional)
 - git
-- perl enviroment (optional)
 - rust enviroment (optional)
 - javajdk (lastest + lts) (optional)
 - eclipse (optional with java)
@@ -53,3 +54,4 @@ Planned Features
 - utilize arguments for debian_install to skip input pormpts
 - fish customization
 - date and time for slstatus
+- Support for bare metal
