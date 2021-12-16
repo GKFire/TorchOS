@@ -13,7 +13,7 @@ fi
 
 echo "Beginning installation of dependancies.."
 apt update
-apt -y install build-essential libx11-dev libxinerama-dev libxft-dev wget xinit xserver-xorg x11-xserver-utils \
+apt -y install build-essential libx11-dev libxinerama-dev libxft-dev wget xinit xserver-xorg x11-xserver-utils compton \
 	fish perl curl gcc cmake make vim htop neofetch apt-transport-https \
 	chromium nitrogen fonts-font-awesome
 
@@ -36,6 +36,15 @@ chown $username.$username /home/$username/.xinitrc
 
 echo "customizing TorchOS install"
 chsh -s /bin/fish $usernamevar
+mkdir /home/$usernamevar/Pictures
+mkdir /home/$usernamevar/Pictures/Wallpapers
+mkdir /home/$usernamevar/Music
+mkdir /home/$usernamevar/Documents
+mkdir /home/$usernamevar/Downloads
+mkdir /home/$usernamevar/Development
+
+mkdir /home/$usernamevar/.config
+cp -ur .config/fish /home/$usernamevar/.config/
 
 
 # code for downloading programming language binaries

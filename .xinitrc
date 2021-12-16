@@ -9,4 +9,5 @@ fi
 
 slstatus &
 nitrogen --restore &
+compton -b &
 exec dwm
