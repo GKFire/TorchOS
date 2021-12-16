@@ -14,7 +14,7 @@ fi
 echo "Beginning installation of dependancies.."
 apt update
 apt -y install build-essential libx11-dev libxinerama-dev libxft-dev wget xinit xserver-xorg x11-xserver-utils \
-	fish perl curl gcc cmake make vim htop neofetch \
+	fish perl curl gcc cmake make vim htop neofetch apt-transport-https \
 	chromium nitrogen fonts-font-awesome
 
 
@@ -39,6 +39,16 @@ chsh -s /bin/fish $usernamevar
 
 
 # code for downloading programming language binaries
+
+curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+install -o root -g root -m 644 microsoft.gpg /usr/share/keyrings/microsoft-archive-keyring.gpg
+sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/ust/share/keyrings/microsoft-archive-keyring.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+
+apt update
+apt -y install code
+
+
+
 
 # install Rust
 clear
@@ -84,12 +94,15 @@ read installBrave
 
 if [ "$installBrave" == "1" ]
 then
-	apt install apt-transport-https
 	curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
 	echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
 	apt update
 	apt -y install brave-browser
 fi
+
+
+
+
 
 clear
 echo "All finished"
