@@ -13,9 +13,9 @@ fi
 
 echo "Beginning installation of dependancies.."
 apt update
-apt -y install build-essential libx11-dev libxinerama-dev libxft-dev wget xinit xserver-xorg x11-xserver-utils compton \
-	fish perl curl gcc cmake make vim htop neofetch apt-transport-https \
-	chromium nitrogen fonts-font-awesome
+apt -y install build-essential libx11-dev libxinerama-dev libxft-dev wget xinit xserver-xorg x11-xserver-utils \
+	fish perl curl gcc cmake make vim htop neofetch apt-transport-https compton \
+	nitrogen fonts-font-awesome
 
 
 echo "installing binaries"
@@ -53,8 +53,6 @@ wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > pa
 install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
 sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
 rm -f packages.microsoft.gpg
-
-
 apt update
 apt -y install code
 
