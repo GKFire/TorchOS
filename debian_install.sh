@@ -36,15 +36,15 @@ chown $usernamevar.$usernamevar /home/$usernamevar/.xinitrc
 
 echo "customizing TorchOS install"
 chsh -s /bin/fish $usernamevar
-mkdir /home/$usernamevar/Pictures
-mkdir /home/$usernamevar/Pictures/Wallpapers
-mkdir /home/$usernamevar/Music
-mkdir /home/$usernamevar/Documents
-mkdir /home/$usernamevar/Downloads
-mkdir /home/$usernamevar/Development
 
 mkdir /home/$usernamevar/.config
+chown $usernamevar.$usernamevar /home/$usernamevar/.config
 cp -ur .config/fish /home/$usernamevar/.config/
+chown $usernamevar.$usernamevar /home/$usernamevar/.config/fish
+chown $usernamevar.$usernamevar /home/$usernamevar/.config/fish/config.fish
+chown $usernamevar.$usernamevar /home/$usernamevar/.config/fish/fish_variables
+
+ 
 
 
 # code for downloading programming language binaries
