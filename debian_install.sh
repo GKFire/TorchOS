@@ -60,8 +60,8 @@ apt -y install code
 
 
 # install Rust
-clear
-echo "Would you like to have Rust installed on this machine?"
+
+echo \n\n"Would you like to have Rust installed on this machine?"
 echo "'1': Yes"
 echo "'0': No"
 echo "(default value is 0, invaild responce will equal 0.)"
@@ -74,8 +74,8 @@ fi
 
 
 # install Java and Eclipse as its IDE
-clear
-echo "Would you like to have Java + Eclipse installed on this machine?"
+
+echo \n\n"Would you like to have Java + Eclipse installed on this machine?"
 echo "'1': Yes"
 echo "'0': No"
 echo "(default value is 0, invaild responce will equal 0.)"
@@ -94,8 +94,8 @@ then
 	cd /opt/TorchOS/
 fi
 
-clear
-echo "Would you like to install Brave Browser?"
+
+echo \n\n"Would you like to install Brave Browser?"
 echo "'1': Yes"
 echo "'0': No"
 echo "(default value is 0, invaild responce will equal 0.)"
@@ -113,7 +113,7 @@ fi
 
 
 
-clear
-echo "All finished"
+
+echo \n\n"All finished"
 
 exit 0
