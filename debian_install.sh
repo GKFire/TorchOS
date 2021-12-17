@@ -61,7 +61,9 @@ apt -y install code
 
 # install Rust
 
-echo \n\n"Would you like to have Rust installed on this machine?"
+echo ""
+echo ""
+echo "Would you like to have Rust installed on this machine?"
 echo "'1': Yes"
 echo "'0': No"
 echo "(default value is 0, invaild responce will equal 0.)"
@@ -75,7 +77,9 @@ fi
 
 # install Java and Eclipse as its IDE
 
-echo \n\n"Would you like to have Java + Eclipse installed on this machine?"
+echo ""
+echo ""
+echo "Would you like to have Java + Eclipse installed on this machine?"
 echo "'1': Yes"
 echo "'0': No"
 echo "(default value is 0, invaild responce will equal 0.)"
@@ -95,7 +99,9 @@ then
 fi
 
 
-echo \n\n"Would you like to install Brave Browser?"
+echo ""
+echo ""
+echo "Would you like to install Brave Browser?"
 echo "'1': Yes"
 echo "'0': No"
 echo "(default value is 0, invaild responce will equal 0.)"
@@ -114,6 +120,8 @@ fi
 
 
 
-echo \n\n"All finished"
+echo ""
+echo ""
+echo "All finished"
 
 exit 0
