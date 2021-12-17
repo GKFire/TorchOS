@@ -19,7 +19,7 @@ What it includes.
 - brave (browser)
 - git
 - rust enviroment (optional)
-- javajdk (lastest + lts) (optional)
+- javajdk (latest + lts) (optional)
 - eclipse (optional with java)
 - vim
 - htop (WHAT?? a distro with htop preinstalled!?)
