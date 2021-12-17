@@ -41,7 +41,7 @@ mkdir /home/$usernamevar/.config
 chown $usernamevar.$usernamevar /home/$usernamevar/.config
 cp -ur .config/fish /home/$usernamevar/.config/
 chown $usernamevar.$usernamevar /home/$usernamevar/.config/fish
-chown $usernamevar.$usernamevar /home/$usernamevar/.config/fish/config.fish
+# chown $usernamevar.$usernamevar /home/$usernamevar/.config/fish/config.fish
 chown $usernamevar.$usernamevar /home/$usernamevar/.config/fish/fish_variables
 
  
@@ -96,6 +96,7 @@ then
 	rm eclipse-java-2021-12-R-linux-gtk-x86_64.tar.gz
 	mv eclipse-java-2021-12-R-linux-gtk-x86_64 eclipse
 	cd /opt/TorchOS/
+	echo "alias eclipse='/usr/share/eclipse/eclipse'" >> /home/$usernamevar/.config/fish/config.fish
 fi
 
 
