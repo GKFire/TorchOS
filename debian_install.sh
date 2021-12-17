@@ -2,9 +2,9 @@
 
 echo "Beginning installation of TorchOS v1.0"
 echo "Enter in your username to begin.."
-read usernamevar
+read USERNAMEVAR
 
-if id "$usernamevar" &>/dev/null; then
+if [ id "$USERNAMEVAR" &>/dev/null ]; then
     echo 'valid username'
 else
     echo "That user doesn't exist"
@@ -29,24 +29,6 @@ cd ../dmenu-5.0/
 make clean install
 cd ../
 
-echo "setting up .xinitrc"
-cp .xinitrc /home/$usernamevar/.xinitrc
-chown $usernamevar.$usernamevar /home/$usernamevar/.xinitrc
-
-
-echo "customizing TorchOS install"
-chsh -s /bin/fish $usernamevar
-
-mkdir /home/$usernamevar/.config
-chown $usernamevar.$usernamevar /home/$usernamevar/.config
-cp -ur .config/fish /home/$usernamevar/.config/
-chown $usernamevar.$usernamevar /home/$usernamevar/.config/fish
-# chown $usernamevar.$usernamevar /home/$usernamevar/.config/fish/config.fish
-chown $usernamevar.$usernamevar /home/$usernamevar/.config/fish/fish_variables
-
- 
-
-
 # code for downloading programming language binaries
 
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
@@ -69,8 +51,7 @@ echo "'0': No"
 echo "(default value is 0, invaild responce will equal 0.)"
 read installRust
 
-if [ "$installRust" == "1" ]
-then
+if [ "$installRust" == "1" ]; then
 	curl https://sh.rustup.rs -sSf | sh
 fi
 
@@ -87,8 +68,7 @@ echo "NOTE: this will install both the latest version and lts version of openjdk
 read installJava
 
 
-if [ "$installJava" == "1" ]
-then
+if [ "$installJava" == "1" ]; then
 	apt -y install openjdk-17-jdk
 	cd /usr/share/
 	wget https://mirrors.jevincanders.net/eclipse/technology/epp/downloads/release/2021-12/R/eclipse-java-2021-12-R-linux-gtk-x86_64.tar.gz
@@ -96,7 +76,6 @@ then
 	rm eclipse-java-2021-12-R-linux-gtk-x86_64.tar.gz
 	mv eclipse-java-2021-12-R-linux-gtk-x86_64 eclipse
 	cd /opt/TorchOS/
-	echo "alias eclipse='/usr/share/eclipse/eclipse'" >> /home/$usernamevar/.config/fish/config.fish
 fi
 
 
@@ -108,8 +87,7 @@ echo "'0': No"
 echo "(default value is 0, invaild responce will equal 0.)"
 read installBrave
 
-if [ "$installBrave" == "1" ]
-then
+if [ "$installBrave" == "1" ]; then
 	curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
 	echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"| tee /etc/apt/sources.list.d/brave-browser-release.list
 	apt update
@@ -117,6 +95,29 @@ then
 fi
 
 
+
+
+echo "setting up .xinitrc"
+cp .xinitrc /home/$USERNAMEVAR/.xinitrc
+chown $USERNAMEVAR.$USERNAMEVAR /home/$USERNAMEVAR/.xinitrc
+
+
+echo "customizing TorchOS install"
+chsh -s /bin/fish $USERNAMEVAR
+
+
+
+cp -ur .config/ /home/$USERNAMEVAR/
+chown $USERNAMEVAR.$USERNAMEVAR /home/$USERNAMEVAR/.config
+chown $USERNAMEVAR.$USERNAMEVAR /home/$USERNAMEVAR/.config/fish	
+chown $USERNAMEVAR.$USERNAMEVAR /home/$USERNAMEVAR/.config/fish/config.fish
+chown $USERNAMEVAR.$USERNAMEVAR /home/$USERNAMEVAR/.config/fish/fish_variables
+
+if [ $installJava]
+then
+	echo "alias eclipse='/usr/share/eclipse/eclipse'" >> /home/$USERNAMEVAR/.config/fish/config.fish
+
+fi
 
 
 
