@@ -3,7 +3,7 @@ an install script for Debian.
 
 Heavy inspiration from sgomare's [featherOS](https://github.com/sgomare/featherOS). great project.
 
-Dwm, st, dmenu, and slstatus were created by [suckless](https://suckless.org)
+Dwm, st, dmenu, and slstatus were created by [suckless.org](https://suckless.org)
 
 What does this do?
 ----------
@@ -16,13 +16,15 @@ What it includes.
 - fish (shell)
 - st (terminal)
 - dwm (window manager)
-- chromium (primary browser)
-- brave (secondary browser) (optional)
+- brave (browser)
 - git
 - rust enviroment (optional)
 - javajdk (lastest + lts) (optional)
 - eclipse (optional with java)
 - vim
+- htop (WHAT?? a distro with htop preinstalled!?)
+- neofetch
+- vscode
 
 Install
 ---------
@@ -34,7 +36,7 @@ go to your root folder and into the opt folder
 clone this repository with git
 `sudo git clone https://github.com/GKFire/TorchOS.git`
 
-run the debian_install script
+run the script
 `sudo ./debian_install`
 
 read the onscreen prompts and follow them carefully.
@@ -52,6 +54,4 @@ Welcome to TorchOS
 Planned Features
 ---------
 - utilize arguments for debian_install to skip input pormpts
-- fish customization
-- date and time for slstatus
-- Support for bare metal
+- generate xrandr script to auto fix screen resolution
