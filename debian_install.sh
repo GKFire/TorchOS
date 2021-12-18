@@ -15,8 +15,8 @@ fi
 # The long download of packages.. 
 echo "Beginning installation of dependancies.."
 apt update
-apt -y install build-essential libx11-dev libxinerama-dev libxft-dev wget xinit xserver-xorg x11-xserver-utils \
-	fish perl curl gcc cmake make vim htop neofetch apt-transport-https compton \
+apt -y install build-essential libx11-dev libxinerama-dev libxft-dev xinit xserver-xorg x11-xserver-utils compton \
+	fish perl curl gcc cmake make wget vim htop neofetch apt-transport-https \
 	nitrogen fonts-font-awesome
 
 # install suckless.org software
