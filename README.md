@@ -7,9 +7,9 @@ Dwm, st, dmenu, and slstatus were created by [suckless.org](https://suckless.org
 
 What does this do?
 ----------
-  This contains an install script for Debian users to automate the install and setup for dwm. The install script will launch apt and download the required packages to setup TorchOS. set variables needed, setup customizations, and change the shell from bash to fish.
+This repository contains an install script for Debian users that automates the install and setup for dwm. The install script launchs apt and download the required packages to setup TorchOS. set variables needed, setup customizations, and change the shell from bash to fish.
   
-**This is recommended for VM's. Not bare metal**
+**This is recommended for VMs. Not bare metal**
 
 What it includes.
 ----------
@@ -51,7 +51,7 @@ start x
   
 Welcome to TorchOS
 
-Planned Features
+(Possible) Future Features
 ---------
-- utilize arguments for debian_install to skip input pormpts
+- utilize arguments for debian_install to skip input prompts
 - generate xrandr script to auto fix screen resolution
